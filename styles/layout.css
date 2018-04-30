@@ -1,10 +1,14 @@
 * {
-  border-sizing: border-box;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header {
   display: inline-block;
-  height: 100%;
   padding: 1em;
   text-align: right;
   width: 100%;
@@ -36,6 +40,10 @@ nav ul li {
 }
 main {
   padding: 2em;
+}
+#map {
+  height: 500px;
+  width: 100%;
 }
 footer {
   padding: 1em;

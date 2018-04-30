@@ -1,0 +1,20 @@
+
+header {
+  background-color: gray;
+  color: white;
+}
+
+header p {
+  font-family: 'Krona One', sans-serif;
+}
+
+nav ul li {
+  font-weight: bold;
+}
+
+main {
+  background-color:lightblue;
+}
+footer {
+  background-color: gray;
+}

@@ -4,9 +4,6 @@ header {
   color: white;
 }
 
-header img {
-  background-image: url('/images/ABAD_logo.png');
-}
 header p {
   font-family: 'Krona One', sans-serif;
 }

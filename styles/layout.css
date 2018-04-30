@@ -1,0 +1,28 @@
+* {
+  border-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  padding: .5em;
+}
+
+header img {
+  display: inline-block;
+  max-width:40%;
+}
+header p {
+  display: inline-block;
+}
+nav {
+  float:right;
+}
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+  padding: 1em;
+}
+
+nav ul li {
+  padding:1em;
+}

@@ -33,10 +33,38 @@
           <li>Home</li>
           <li>About Us</li>
           <li>Trips</li>
+          <li id= "myBtn">Login</li>
         </ul>
       </nav>
     </header>
     <main>
+      <div id= "modal" class = "Mymodal">
+        <div class = "modal-content animate">
+          <div id="modalContainer">
+            <span class="close">&times;</span>
+            <img src="images/ABAD-logo.png" id="modalImg" alt="ABAD logo">
+          </div>
+          <h1>Please Log In</h1>
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Optional"
+          name="email">
+        <section>
+          <button id="rememberMe" class="modalButton" type="submit">Login</button>
+          <button id="createAccount" class="modalButton" type="submit">Create Account</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </section>
+
+
+      </div>
+    </div>
+
       <div id="map">MAP</div>
       <section class="add-trip container">
           <form id="add-trip">

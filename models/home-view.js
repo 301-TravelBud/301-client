@@ -4,12 +4,14 @@
 let city = 'code fellows';
 
 function initMap() {
+  
 
-  var merica = {lat: 82, lng: 40};
+  var mapLocation = {lat: 47, lng: -122};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
-    center: merica
+    center: mapLocation
   });}
+  
 
 var modal = document.getElementById('modal');
 
@@ -56,5 +58,5 @@ window.onclick = function(event) {
       });
     }
   });
-}
+
 

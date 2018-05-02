@@ -18,9 +18,19 @@
         <h3>{{location}}</h3>
           <p>{{dates}}</p>
           <p>{{username}}</p>
-          <p>{{contact}}</p>
+          <p>{{email}}</p>
         <button id="delete-btn" data-id={{trip_id}}> delete</button>
       </div>
+    </script>
+    <script type="text/x-handlebars-template" id="trip-table-template">
+      
+      <tr class="table-container">
+        <td>{{country}}</td>
+        <td>{{city}}</td>
+        <td>{{start_date}}</td>
+        <td>{{end_date}}</td>
+      </tr>
+      
     </script>
 
   </head>
@@ -73,7 +83,15 @@
             <input type="text" name="contact" placeholder="contact info">
             <button type="submit">add trip</button>
           </form>
+      </section>
 
+      <section id="trip-view">
+        <table id="trip-list">
+          <tr><td>Row</td></tr>
+
+        </table>
+
+      </section>
     </main>
     <footer>
       CodeFellows 301 project
@@ -86,6 +104,7 @@
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKfjj4l1Mq_L07OLT33VuNnvWxorsJf7E&callback=initMap" type="text/javascript"></script>
 
       <!-- Application Resources -->
+      <script src="scripts/trip.js" type="text/javascript"></script>
       <script src="models/home-view.js" type="text/javascript"></script>
       <script src="models/account-view.js" type="text/javascript"></script>
       <script src="models/forum-view.js" type="text/javascript"></script>

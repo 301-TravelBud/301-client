@@ -10,15 +10,14 @@ ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 page('/'
-,(ctx, next) => app.Trip.fetchAll(app.Trip.initIndexPage));
+  , () => app.Trip.fetchAll(app.Trip.initIndexPage));
 
 
- 
 
 (function (module){
-  
+
   function Trip(data){
-    
+
     Object.keys(data).forEach( key => this[key] = data[key]);
   }
   Trip.all = [];
@@ -30,28 +29,24 @@ page('/'
 
   Trip.initIndexPage = function(ctx, next) {
 
-    Trip.all.forEach(trip => 
+    Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
-    }
-    
+  };
+
   Trip.fetchAll = callback => {
     $.get(`${ENV.apiUrl}/trips`)
       .then(Trip.loadAll)
       .then(callback)
       .catch(console.error);
-  }
-  // Trip.displayTrips
-
+  };
 
   Trip.loadAll = rows => {
     Trip.all = rows.map(trip => new Trip(trip));
-
-  }
-
+  };
 
 
 
-module.Trip = Trip;
-})(app)
+  module.Trip = Trip;
+})(app);
 
 page();

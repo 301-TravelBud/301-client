@@ -38,8 +38,8 @@ console.log('iffe')
   }
 
   tripView.addTripPage = function () {
-    
-    page(`/addtrip`);
+   
+    page(`/trips/${currID}`);
   }
 
 

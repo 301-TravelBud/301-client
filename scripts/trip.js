@@ -9,7 +9,7 @@ ENV.productionApiUrl = 'https://git.heroku.com/abad-app.git';
 ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
-//TODO: move page functions to route.js
+
 
 
 

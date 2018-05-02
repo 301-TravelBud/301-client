@@ -24,5 +24,8 @@ Task management - Trello - https://trello.com/b/O2xf8GNa/301-project
 
 CSSReset provided by https://meyerweb.com/eric/tools/css/reset/
 
+Fonts from Google - https://fonts.google.com/specimen/Krona+One?selection.family=Krona+One 
+
+
 - Wireframes
 - UX Workflow

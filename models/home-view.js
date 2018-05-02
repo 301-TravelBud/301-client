@@ -4,14 +4,14 @@
 let city = 'code fellows';
 
 function initMap() {
-  
+
 
   var mapLocation = {lat: 47, lng: -122};
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 4,
     center: mapLocation
   });}
-  
+
 
 var modal = document.getElementById('modal');
 
@@ -38,25 +38,25 @@ window.onclick = function(event) {
   }
 };
 
-  const map = new google.maps.Map(document.getElementById('map'), {zoom: 6});
-  const geocoder = new google.maps.Geocoder;
-  const travelDetail= city + ' marker comments goes in here';
-  const infowindow = new google.maps.InfoWindow({
-    content: travelDetail
-  });
+const map = new google.maps.Map(document.getElementById('map'), {zoom: 6});
+const geocoder = new google.maps.Geocoder;
+const travelDetail= city + ' marker comments goes in here';
+const infowindow = new google.maps.InfoWindow({
+  content: travelDetail
+});
 
-  geocoder.geocode({'address': city}, function(results, status) {
-    if (status === 'OK') {
-      map.setCenter(results[0].geometry.location);
+geocoder.geocode({'address': city}, function(results, status) {
+  if (status === 'OK') {
+    map.setCenter(results[0].geometry.location);
 
-      const marker = new google.maps.Marker({
-        position: results[0].geometry.location,
-        map: map
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-    }
-  });
+    const marker = new google.maps.Marker({
+      position: results[0].geometry.location,
+      map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+});
 
 

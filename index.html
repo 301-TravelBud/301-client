@@ -12,42 +12,35 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
 
-
-    <script type="text/x-handlebars-template" id="trip-detail-template">
-      <div class="trip-container">
-        <h3>{{location}}</h3>
-          <p>{{dates}}</p>
-          <p>{{username}}</p>
-          <p>{{email}}</p>
-        <button id="delete-btn" data-id={{trip_id}}> delete</button>
-      </div>
-    </script>
     <script type="text/x-handlebars-template" id="trip-table-template">
-      
       <tr class="table-container">
         <td>{{country}}</td>
         <td>{{city}}</td>
         <td>{{start_date}}</td>
         <td>{{end_date}}</td>
       </tr>
-      
     </script>
 
   </head>
+
   <body>
+
     <header>
+
       <img class="header" src="images/ABAD-logo.png" alt="ABAD logo">
       <p class="header">never travel alone</p>
       <nav class = "main-nav">
         <div class = "icon-menu"></div>
         <ul>
-          <li>Home</li>
+          <li><a href="/">Home</a></li>
           <li>About Us</li>
-          <li>Trips</li>
+          <li id="navTrips"><a href="/addtrips">Trips</a></li>
           <li id= "myBtn">Login</li>
         </ul>
       </nav>
+
     </header>
+
     <main>
       <div id= "modal" class = "Mymodal">
         <div class = "modal-content animate">
@@ -77,18 +70,20 @@
     </div>
     <section id ="test">
       <div id="map"></div>
-    </form>
   </section>
 </section>
 <section id="trip-view">
   <table id="trip-list">
-    <tr><td>Row</td></tr>
+    <th><td>Country</td></th>
+    <th><td>City</td></th>
+    <th><td>Start Date</td></th>
+    <th><td>End Date</td></th>
   </table>
-        <form id="add-trip">
-          <input type="text" name="country" id= "country" placeholder="country" required>
-          <input type="text" name="city" id="city" placeholder="city">
-          <input type="date" name="start_date" id="start_date" placeholder="start date (20XX-MM-DD)">
-          <input type="date" name="end_date" id="end_date" placeholder="end date (20XX-MM-DD)">
+    <form id="add-trip">
+      <input type="text" name="country" id= "country" placeholder="country" required>
+      <input type="text" name="city" id="city" placeholder="city">
+      <input type="date" name="start_date" id="start_date" placeholder="start date">
+      <input type="date" name="end_date" id="end_date" placeholder="end date">
           <button type="submit" id="submitTrip">add trip</button>
         </form>
       </section>

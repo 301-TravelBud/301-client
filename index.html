@@ -83,12 +83,14 @@
 <section id="trip-view">
   <table id="trip-list">
     <tr><td>Row</td></tr>
-      <form id="add-trip">
-      </table>
-        <input type="text" name="location" placeholder="location">
-        <input type="text" name="dates" placeholder="dates">
-        <input type="text" name="contact" placeholder="contact info">
-        <button type="submit">add trip</button>
+  </table>
+        <form id="add-trip">
+          <input type="text" name="country" id= "country" placeholder="country" required>
+          <input type="text" name="city" id="city" placeholder="city">
+          <input type="date" name="start_date" id="start_date" placeholder="start date (20XX-MM-DD)">
+          <input type="date" name="end_date" id="end_date" placeholder="end date (20XX-MM-DD)">
+          <button type="submit" id="submitTrip">add trip</button>
+        </form>
       </section>
     </main>
     <footer>

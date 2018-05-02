@@ -10,9 +10,6 @@ ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 //TODO: move page functions to route.js
-page('/'
-  ,(ctx, next) => app.Trip.fetchAll(app.Trip.initIndexPage));
-
 
 
 
@@ -55,4 +52,3 @@ page('/'
   module.Trip = Trip;
 })(app);
 
-page();

@@ -1,26 +1,28 @@
 'use strict';
 
-var app = app || {}
+var app = app || {};
+
 
 (function (module){
-
-  const tripView = {};
+console.log('iffe')
+  let tripView = {};
 
   function show(section) {
     $('section').not(`#${section}`).hide();
     $(`#${section}`).show();
   }
 
-  Trip.initIndexPage = function(ctx) {
+  tripView.initIndexPage = function(ctx) {
     $('#triplist').empty();
     $('#trip-view').show();
-    Trip.all.forEach(trip => $('#trip-list').append(trip.toHtml('#trip-table-template')));
+    app.Trip.all.forEach(trip => $('#trip-list').append(trip.toHtml('#trip-table-template')));
   };
 
 
-  $('#submitTrip').on('submit', addNewTrip);
 
-  function addNewTrip(event) {
+
+  tripView.addNewTrip = function(event) {
+    console.log('addnewtrip')
     event.preventDefault();
     let trip = {
       country: event.target.country.value,
@@ -28,18 +30,16 @@ var app = app || {}
       start_date: event.target.start_date.value,
       end_date: event.target.end_date.value
     };
-    $.post(`${ENV.apiUrl}/trips`, trip)
+    console.log('test' + trip);
+    $.post(`${ENV.apiUrl}/addtrip`, trip)
       .then(app.Trip.fetchAll(tripView.initIndexPage))
       .catch(console.error);
-    addTripPage();
+    tripView.addTripPage();
   }
 
-  function addTripPage(event) {
-    event.preventDefault();
-    var endOfUrl = window.location.pathname;
-    var n = endOfUrl.lastIndexOf('/');
-    var currID = endOfUrl.substring(n + 1);
-    page(`/trips/${currID}`);
+  tripView.addTripPage = function () {
+    
+    page(`/addtrip`);
   }
 
 

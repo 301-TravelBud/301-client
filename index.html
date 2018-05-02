@@ -41,10 +41,10 @@
       <nav class = "main-nav">
         <div class = "icon-menu"></div>
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Trips</li>
-          <li id= "myBtn">Login</li>
+          <li href="/">Home</li>
+          <li href="/">About Us</li>
+          <li href="/">Trips</li>
+          <a id= "myBtn" href="/">Login</a>
         </ul>
       </nav>
     </header>
@@ -55,24 +55,22 @@
             <span class="close">&times;</span>
             <img src="images/ABAD-logo.png" id="modalImg" alt="ABAD logo">
           </div>
+          <form action = "#" id= "new-trip-form">
           <h1>Please Log In</h1>
+          <div id = "wrong">Incorrect Username or Password. Please Try Again</div>
           <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
+          <input id="username" type="text" placeholder="Enter Username" name="uname" required>
     
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          <label for="email"><b>Email</b></label>
+          <input id ="password" type="password" placeholder="Enter Password" name="psw" required>
+          <label id = "userEmail" for="email"><b>Email</b></label>
           <input type="text" placeholder="Optional"
           name="email">
         <section>
-          <button id="rememberMe" class="modalButton" type="submit">Login</button>
-          <button id="createAccount" class="modalButton" type="submit">Create Account</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
+          <a href="/admin" id="rememberMe" class="modalButton" type="submit">Login</a>
+          <button id="createAccount" class="modalButton" type="submit">Make my email public</button>
         </section>
-
-
+      </form>
       </div>
     </div>
     <section id ="test">
@@ -102,10 +100,12 @@
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKfjj4l1Mq_L07OLT33VuNnvWxorsJf7E&callback=initMap" type="text/javascript"></script>
 
       <!-- Application Resources -->
-      <script src="scripts/trip.js" type="text/javascript"></script>
+ 
       <script src="models/home-view.js" type="text/javascript"></script>
       <script src="models/account-view.js" type="text/javascript"></script>
       <script src="models/forum-view.js" type="text/javascript"></script>
+      <script src="scripts/trip.js" type="text/javascript"></script>
+      <script src="scripts/routes.js" type="text/javascript"></script>
 
 
   </body>

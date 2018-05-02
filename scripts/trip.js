@@ -24,7 +24,32 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     return template(this);
   };
   let currentUser = {};
-  // $('#new-trip-form').on('submit', Trip.userCheck);
+
+
+  Trip.createAccount = () => {
+    const newUser = {
+      username: $('#username').val(),
+      password: $('#password').val(),
+      email: $('#userEmail').val()
+    };
+    console.log($('#username').val());
+    Trip.newUser(newUser);
+  };
+
+  Trip.newUser = (obj, callback) => {
+    console.log(obj);
+    $.get(`${ENV.apiUrl}/admin`)
+      .then(results => {
+for(let i in results) {
+  if(results[i].includes(obj.username)) {
+  console.log('pls pick a different name');
+} else {
+  currentUser = newUser
+  $.post('/CreateUser', {user_name: currentUser.username, password: currentUser.password, email: currentUser.email})
+  console.log('new user created')
+          }
+)});
+  };
 
   Trip.userCheck = () => {
     const check = {

@@ -1,23 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  display: inline-block;
+nav ul{
+  list-style-type: none;
   padding: 1em;
-  text-align: right;
-  width: 100%;
-}
-
-header img {
-  float: left; 
-  max-width:20%;
-  min-width: 120px;
 }
 header p {
   float: left;
@@ -25,32 +8,24 @@ header p {
   clear: left;
   padding: .25em;
 }
-nav {
-  display:inline-block;
-  padding: .5em;
-  text-align: center; 
-}
-nav ul{
-  list-style-type: none;
-  padding: 1em;
-}
-
-nav ul li {
-  padding:1em;
+.header {
+  float: left; 
+  max-width:20%;
+  min-width: 80px;
 }
 main {
   padding: 2em;
 }
-#map {
-  border: .5px solid black; 
-  height: 500px;
-  width: 100%;
-}
 footer {
   padding: 1em;
 }
-
-
+#map {
+  border: .5px solid black; 
+  margin: auto;
+  margin-top: 3em;
+  height: 500px;
+  width: 90%;
+}
 #modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -93,14 +68,14 @@ footer {
   margin: auto;
 }
 .modalButton {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4CAF50;
+  color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 48%;
-}
+  }
 .animate {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
@@ -110,7 +85,7 @@ footer {
   from {-webkit-transform: scale(0)} 
   to {-webkit-transform: scale(1)}
 }
-  
+
 @keyframes animatezoom {
   from {transform: scale(0)} 
   to {transform: scale(1)}
@@ -124,4 +99,49 @@ footer {
   text-align: center;
   margin: 24px 0 12px 0;
   position: relative; 
+}
+header {
+  display: inline-block;
+  padding: 1em;
+  text-align: right;
+  width: 100%;
+}
+@media screen and (max-width: 790px) {
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.icon-menu {
+  font-size: 3em;
+  float: right;
+}
+
+
+nav {
+  display:inline-block;
+  padding: .5em;
+  text-align: center; 
+}
+
+nav>ul:hover {
+display: inline;
+}
+
+
+}
+
+/* ul > li { */
+  /* display: inline; */
+  /* } */
+  .header {
+    float: left; 
+    max-width:20%;
+  min-width: 80px;
+}
+
+nav ul li {
+  padding:1em;
 }

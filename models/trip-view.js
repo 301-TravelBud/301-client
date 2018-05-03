@@ -23,8 +23,9 @@ var app = app || {};
     app.Trip.all.forEach(trip => {
       
       
-      $('#trip-list').append(trip.toHtml('#trip-table-template')));
-    };
+      $('#trip-list').append(trip.toHtml('#trip-table-template'));
+    });
+    
   };
 
 

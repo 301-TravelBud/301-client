@@ -91,7 +91,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
   Trip.fetchAll = callback => {
-    $.get(`${ENV.apiUrl}/addtrips`)
+    $.get(`${ENV.apiUrl}/trips`)
       .then(Trip.loadAll)
       .then(callback)
       .catch(console.error);

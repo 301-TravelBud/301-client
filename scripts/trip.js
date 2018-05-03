@@ -88,6 +88,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   Trip.initIndexPage = function(ctx, next) {
     console.log('initindexpage')
+    $('#aboutus').hide();
     $('#trip-view').hide();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
@@ -95,7 +96,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Trip.initTripView = function(ctx, next) {
     console.log('initTripView')
     $('#map').hide();
-    $('#trip-view').show();
+    $('#trip-view').hide();
+    $('#aboutus').hide();
+
+  };
+
+  Trip.initAboutUsView = function(ctx, next) {
+    console.log('aboutusview')
+    $('#map').hide();
+    $('#trip-view').hide();
+    $('#aboutus').show();
 
   };
 

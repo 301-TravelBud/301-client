@@ -80,7 +80,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       })
       .then(callback)
       .catch(errorCallback);
-
   };
 
 
@@ -92,24 +91,22 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   Trip.initIndexPage = function(ctx, next) {
     console.log('initindexpage');
-    $('#map').show();
-    $('#aboutus').hide();
-    $('#trip-view').hide();
+    $('.page').hide();
+    $('#test').show();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
   };
   Trip.initTripView = function(ctx, next) {
     console.log('initTripView');
-    $('#map').hide();
-    $('#trip-view').show();
-    $('#aboutus').hide();
+    $('.page').hide();
+    $('#addtrip').show();
+    $('');
 
   };
 
   Trip.initAboutUsView = function(ctx, next) {
     console.log('aboutusview');
-    $('#map').hide();
-    $('#trip-view').hide();
+    $('.page').hide();
     $('#aboutus').show();
 
   };

@@ -17,7 +17,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     Object.keys(data).forEach( key => this[key] = data[key]);
     this.start_date = this.start_date.slice(0, 10);
     this.end_date = this.end_date.slice(0, 10);
-    console.log(this);
   }
   Trip.all = [];
   Trip.prototype.toHtml = function(htmlID) {
@@ -25,60 +24,62 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     return template(this);
   };
   Trip.currentUser = {};
+  Trip.addUser = {};
 
-
-  Trip.createAccount = () => {
-    const newUser = {
+  Trip.createAccount = (callback) => {
+    Trip.addUser = {
       username: $('#username').val(),
       password: $('#password').val(),
       email: $('#userEmail').val()
     };
-    console.log($('#username').val());
-    Trip.newUser(newUser);
+    console.log(Trip.addUser, 'in create account 1');
+    Trip.newUser(Trip.addUser, callback);
   };
 
-  //   Trip.newUser = (obj, callback) => {
-  //     console.log(obj);
-  //     $.get(`${ENV.apiUrl}/admin`)
-  //       .then(results => {
-  // for(let i in results) {
-  //   if(results[i].includes(obj.username)) {
-  //   console.log('pls pick a different name');
-  // } else {
-  //   Trip.currentUser = newUser
-  //   $.post('/CreateUser', {user_name: currentUser.username, password: currentUser.password, email: currentUser.email})
-  //   console.log('new user created')
-  //           }
-  // )});
-  //   };
+  Trip.newUser = (obj, callback) => {
+    $.get(`${ENV.apiUrl}/login`)
+      .then(exists => {
+        if(parseInt(exists) === 1) {
+          console.log('pls pick a different name');
+        } else {
+          console.log('new user', obj);
+          Trip.currentUser = obj;
+          console.log(Trip.currentUser, 'its me current user');
+          $.post(`${ENV.apiUrl}/createuser`, {
+            user_name: Trip.currentUser.username,
+            password: Trip.currentUser.password,
+            email: Trip.currentUser.email});
+          console.log('new user created');
+          callback();
+        }
+      }
+      );};
 
-  // Trip.userCheck = () => {
-  //   const check = {
-  //     username: $('#username').val(),
-  //     password: $('#password').val(),
-  //     email: $('#userEmail').val()
-  //   };
-  //   console.log($('#username').val());
-  //   Trip.adminCheck(check);
-  // };
+  Trip.userCheck = (callback) => {
+    const check = {
+      username: $('#username').val(),
+      password: $('#password').val(),
+      email: $('#userEmail').val()
+    };
+    Trip.adminCheck(check, callback);
+  };
 
-  // Trip.adminCheck = (obj) => {
-  //   $.get(`${ENV.apiUrl}/admin`)
-  //     .then(results => {
-  //       for (let i in results) {
-  //         console.log(results[i]);
-  //         if (results[i].user_name == obj.username && results[i].password == obj.password) {
-  //           Trip.currentUser = results[i];
-  //         } else {
-  //           $('#wrong').toggle();
-  //         }
-  //       }
-  //       console.log(results);
-
-  //     });
-  //   //   .then(callback)
-  //   //   .catch(errorCallback);
-  // };
+  Trip.adminCheck = (obj, callback) => {
+    $.get(`${ENV.apiUrl}/admin`)
+      .then(results => {
+        console.log(results);
+        for (let i in results) {
+          if (results[i].user_name == obj.username && results[i].password == obj.password) {
+            Trip.currentUser = results[i];
+            console.log('current user here ->', Trip.currentUser);
+          } else {
+            $('#wrong').show();
+          }
+        }
+      })
+      .then(callback)
+      .catch(errorCallback);
+  };
 
 
   Trip.adminView = (callback) => {
@@ -103,6 +104,10 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Trip.loadAll = rows => {
     console.log(rows);
     Trip.all = rows.map(trip => new Trip(trip));
+  };
+
+  Trip.hideModal = () => {
+    $('#modal').css('display', 'none');
   };
 
 

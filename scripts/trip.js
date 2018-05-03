@@ -88,6 +88,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
   Trip.initIndexPage = function(ctx, next) {
     console.log('initindexpage')
+    $('#map').show()
     $('#aboutus').hide();
     $('#trip-view').hide();
     Trip.all.forEach(trip =>
@@ -96,7 +97,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Trip.initTripView = function(ctx, next) {
     console.log('initTripView')
     $('#map').hide();
-    $('#trip-view').hide();
+    $('#trip-view').show();
     $('#aboutus').hide();
 
   };

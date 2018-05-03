@@ -6,6 +6,8 @@ var app = app || {};
 
   function Marker(data){
     Object.keys(data).forEach( key => this[key] = data[key]);
+    this.start_date = this.start_date.slice(0, 10);
+    this.end_date = this.end_date.slice(0, 10);
   }
   Marker.all = [];
 

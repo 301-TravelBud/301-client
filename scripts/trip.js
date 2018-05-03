@@ -65,15 +65,14 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     $.get(`${ENV.apiUrl}/admin`)
       .then(results => {
         for (let i in results) {
-          console.log(results[i]);
           if (results[i].user_name == obj.username && results[i].password == obj.password) {
             Trip.currentUser = results[i];
+
           } else {
             $('#wrong').toggle();
+
           }
         }
-        console.log(results);
-
       });
     //   .then(callback)
     //   .catch(errorCallback);

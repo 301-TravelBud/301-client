@@ -1,6 +1,6 @@
 #wrong {
   color: red;
-  display: none;
+  display: hidden;
 }
 nav ul{
   list-style-type: none;
@@ -34,7 +34,7 @@ footer {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 30%; /* Location of the box */
+  padding-top: 10em; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -50,7 +50,7 @@ footer {
   margin: auto;
   padding: 20px;
   border: .5em solid #888;
-  width: 80%;
+  width: 70%;
 }
 .close {
   color: #aaaaaa;
@@ -133,8 +133,35 @@ nav {
 nav>ul:hover {
 display: inline;
 }
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: .5em solid #888;
+  width: 90%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+}
 
-
+.Mymodal > div > h1 {
+  font-size: 13px;
+  font-weight: bold;
+  display:block;
+  margin: auto;
+}
+.modalButton {
+  background-color: #4CAF50;
+  color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+  }
 }
 
 /* ul > li { */

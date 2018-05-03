@@ -17,10 +17,14 @@ var app = app || {};
   }
 
   tripView.initIndexPage = function(ctx) {
-    $('#triplist').empty();
+    $('#triplist').delete();
     $('#trip-view').show();
     // $('#map').hide();
-    app.Trip.all.forEach(trip => $('#trip-list').append(trip.toHtml('#trip-table-template')));
+    app.Trip.all.forEach(trip => {
+      
+      
+      $('#trip-list').append(trip.toHtml('#trip-table-template')));
+    };
   };
 
 

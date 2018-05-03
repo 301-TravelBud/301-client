@@ -15,6 +15,8 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   function Trip(data){
 
     Object.keys(data).forEach( key => this[key] = data[key]);
+    this.start_date = this.start_date.slice(0, 10);
+    this.end_date = this.end_date.slice(0, 10);
   }
   Trip.all = [];
   Trip.prototype.toHtml = function(htmlID) {
@@ -85,9 +87,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
   Trip.initIndexPage = function(ctx, next) {
-    $('#tripView').hide();
+    console.log('initindexpage')
+    $('#trip-view').hide();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
+  };
+  Trip.initTripView = function(ctx, next) {
+    console.log('initTripView')
+    $('#map').hide();
+    $('#trip-view').show();
+
   };
 
   Trip.fetchAll = callback => {

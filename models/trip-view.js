@@ -17,7 +17,8 @@ var app = app || {};
   }
 
   tripView.initIndexPage = function(ctx) {
-    $('#triplist').delete();
+    $('td').text('');
+    $('#triplist').hide();
     $('#trip-view').show();
     // $('#map').hide();
     app.Trip.all.forEach(trip => {

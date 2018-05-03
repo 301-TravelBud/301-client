@@ -1,6 +1,6 @@
 #wrong {
   color: red;
-  display: none;
+  display: hidden;
 }
 nav ul{
   list-style-type: none;
@@ -30,6 +30,7 @@ footer {
 
 /* Modal Content */
 #modal {
+
   display: none;
   position: fixed;
   padding-top: 30%;
@@ -54,7 +55,7 @@ footer {
   margin: auto;
   padding: 20px;
   border: .5em solid #888;
-  width: 80%;
+  width: 70%;
 }
 .close {
   color: #aaaaaa;
@@ -119,6 +120,7 @@ footer {
 form#add-trip {
   text-align: center;
 }
+
 
 @media screen and (max-width: 790px) {
   .header {

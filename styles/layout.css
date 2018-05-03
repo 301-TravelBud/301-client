@@ -1,6 +1,6 @@
 #wrong {
   color: red;
-  display: none;
+  display: hidden;
 }
 nav ul{
   list-style-type: none;
@@ -34,6 +34,7 @@ footer {
   position: fixed;
   padding-top: 30%;
   z-index: 2;
+
   left: 0;
   top: 0;
   width: 100%;
@@ -54,7 +55,7 @@ footer {
   margin: auto;
   padding: 20px;
   border: .5em solid #888;
-  width: 80%;
+  width: 70%;
 }
 .close {
   color: #aaaaaa;
@@ -120,6 +121,7 @@ form#add-trip {
   text-align: center;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 790px) {
   .header {
     float: left; 
@@ -148,6 +150,40 @@ ul.menu {
   top: 133px;
   width: 100%;
   z-index: 1;
+=======
+nav>ul:hover {
+display: inline;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: .5em solid #888;
+  width: 90%;
+}
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Mymodal > div > h1 {
+  font-size: 13px;
+  font-weight: bold;
+  display:block;
+  margin: auto;
+}
+.modalButton {
+  background-color: #4CAF50;
+  color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 48%;
+  }
+>>>>>>> 7a5682a1a2d52f6c7839fd7ce6b7ea3894b98312
 }
 
   ul.menu > a > li {

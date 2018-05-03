@@ -15,6 +15,8 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   function Trip(data){
 
     Object.keys(data).forEach( key => this[key] = data[key]);
+    this.start_date = this.start_date.slice(0, 10);
+    this.end_date = this.end_date.slice(0, 10);
   }
   Trip.all = [];
   Trip.prototype.toHtml = function(htmlID) {
@@ -60,8 +62,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
   Trip.adminCheck = (obj) => {
-    console.log(obj);
-    console.log('in check');
     $.get(`${ENV.apiUrl}/admin`)
       .then(results => {
         for (let i in results) {
@@ -86,9 +86,27 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
   Trip.initIndexPage = function(ctx, next) {
-    $('#tripView').hide();
+    console.log('initindexpage');
+    $('#map').show();
+    $('#aboutus').hide();
+    $('#trip-view').hide();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
+  };
+  Trip.initTripView = function(ctx, next) {
+    console.log('initTripView');
+    $('#map').hide();
+    $('#trip-view').show();
+    $('#aboutus').hide();
+
+  };
+
+  Trip.initAboutUsView = function(ctx, next) {
+    console.log('aboutusview');
+    $('#map').hide();
+    $('#trip-view').hide();
+    $('#aboutus').show();
+
   };
 
   Trip.fetchAll = callback => {
@@ -99,6 +117,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
   Trip.loadAll = rows => {
+    console.log(rows);
     Trip.all = rows.map(trip => new Trip(trip));
   };
 

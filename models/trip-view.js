@@ -17,10 +17,16 @@ var app = app || {};
   }
 
   tripView.initIndexPage = function(ctx) {
-    $('#triplist').empty();
+    $('td').text('');
+    $('#triplist').hide();
     $('#trip-view').show();
     // $('#map').hide();
-    app.Trip.all.forEach(trip => $('#trip-list').append(trip.toHtml('#trip-table-template')));
+    app.Trip.all.forEach(trip => {
+
+
+      $('#trip-list').append(trip.toHtml('#trip-table-template'));
+    });
+
   };
 
 
@@ -35,12 +41,10 @@ var app = app || {};
     $.post(`${ENV.apiUrl}/addtrip`, trip)
       .then(app.Trip.fetchAll(tripView.initIndexPage))
       .catch(console.error);
-    // tripView.addTripPage();
+
   };
 
-  // tripView.addTripPage = function () {
-  //   $('#map').hide();
-  // };
+
 
 
   module.tripView = tripView;

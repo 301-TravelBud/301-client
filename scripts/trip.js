@@ -99,9 +99,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Trip.initTripView = function(ctx, next) {
     console.log('initTripView');
     $('.page').hide();
-    $('#addtrip').show();
-    $('');
-
+    $('#trip-view').show();
   };
 
   Trip.initAboutUsView = function(ctx, next) {
@@ -119,7 +117,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
   Trip.loadAll = rows => {
-    console.log(rows);
     Trip.all = rows.map(trip => new Trip(trip));
   };
 

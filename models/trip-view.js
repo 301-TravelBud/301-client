@@ -4,10 +4,10 @@ var app = app || {};
 
 
 (function (module){
-  $('#navTrips').on('click', function (event){
-    event.preventDefault();
-    tripView.initIndexPage();
-  });
+  // $('#navTrips').on('click', function (event){
+  //   event.preventDefault();
+  //   tripView.initIndexPage();
+  // });
 
   let tripView = {};
 

@@ -52,7 +52,7 @@ footer {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 100px;
   border: .5em solid #888;
   width: 80%;
 }
@@ -78,7 +78,7 @@ footer {
 .modalButton {
   background-color: #4CAF50;
   color: white;
-    padding: 14px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
@@ -188,3 +188,6 @@ ul.menu {
   }
 }
 
+#buttons {
+  padding-top: 50px;
+}

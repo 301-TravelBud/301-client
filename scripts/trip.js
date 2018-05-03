@@ -10,7 +10,6 @@ ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
-
 (function (module){
 
   function Trip(data){
@@ -104,16 +103,12 @@ for(let i in results) {
       .then(callback)
       .catch(console.error);
   };
-  // Trip.displayTrips
-
 
   Trip.loadAll = rows => {
     Trip.all = rows.map(trip => new Trip(trip));
-
   };
-
-
 
 
   module.Trip = Trip;
 })(app);
+

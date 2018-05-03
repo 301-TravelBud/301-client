@@ -30,6 +30,7 @@ var app = app || {};
   };
 
 
+
   tripView.addNewTrip = function(event) {
     event.preventDefault();
     let trip = {

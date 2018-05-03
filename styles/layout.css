@@ -121,7 +121,6 @@ form#add-trip {
   text-align: center;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 790px) {
   .header {
     float: left; 
@@ -150,10 +149,8 @@ ul.menu {
   top: 133px;
   width: 100%;
   z-index: 1;
-=======
-nav>ul:hover {
-display: inline;
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -183,7 +180,35 @@ display: inline;
     cursor: pointer;
     width: 48%;
   }
->>>>>>> 7a5682a1a2d52f6c7839fd7ce6b7ea3894b98312
+
+@media screen and (max-width: 790px) {
+  .header {
+    float: left; 
+    width: 110px;
+  }
+
+  nav.main-nav {
+    height: 150px;
+  }
+
+  #hamb-menu{
+    display: initial;
+  }
+  
+  ul.menu > a {
+    background-color: #f4e8c1;
+    border: 1px black solid;
+    margin-left: -16px;
+    padding: 1em;
+    width: 104.7%;
+  }
+  
+ul.menu {
+  display: none;
+  position: absolute;
+  top: 133px;
+  width: 100%;
+  z-index: 1;
 }
 
   ul.menu > a > li {

@@ -12,39 +12,44 @@ header p {
   clear: left;
   padding: .25em;
 }
-.header {
-  float: left; 
-  max-width:20%;
-  min-width: 80px;
-}
+
 main {
   padding: 2em;
+  
 }
 footer {
   padding: 1em;
 }
-#map {
+ #map {
   border: .5px solid black; 
   margin: auto;
   margin-top: 3em;
   height: 500px;
   width: 90%;
 }
-#modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 10em; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
 
 /* Modal Content */
+#modal {
+
+  display: none;
+  position: fixed;
+  padding-top: 30%;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+#modalImg {
+  width: 20%;
+  border-radius: 50%;
+  margin: auto;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -94,85 +99,95 @@ footer {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
-#modalImg {
-  width: 20%;
-  border-radius: 50%;
-  margin: auto;
-}
+
 #modalContainer {
   text-align: center;
   margin: 24px 0 12px 0;
   position: relative; 
 }
-header {
-  display: inline-block;
-  padding: 1em;
-  text-align: right;
-  width: 100%;
+
+  ul.menu > a{
+  display: block;
 }
+
+#hamb-menu {
+  width: 50px;
+  height: auto;
+  float: right;
+  margin: -50px 20px 0 0;
+}
+
+form#add-trip {
+  text-align: center;
+}
+
+
 @media screen and (max-width: 790px) {
+  .header {
+    float: left; 
+    width: 110px;
+  }
 
+  nav.main-nav {
+    height: 150px;
+  }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.icon-menu {
-  font-size: 3em;
-  float: right;
-}
-
-
-nav {
-  display:inline-block;
-  padding: .5em;
-  text-align: center; 
-}
-
-nav>ul:hover {
-display: inline;
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: .5em solid #888;
-  width: 90%;
-}
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 14px;
-  font-weight: bold;
+  #hamb-menu{
+    display: initial;
+  }
+  
+  ul.menu > a {
+    background-color: #f4e8c1;
+    border: 1px black solid;
+    margin-left: -16px;
+    padding: 1em;
+    width: 104.7%;
+  }
+  
+ul.menu {
+  display: none;
+  position: absolute;
+  top: 133px;
+  width: 100%;
+  z-index: 1;
 }
 
-.Mymodal > div > h1 {
-  font-size: 13px;
-  font-weight: bold;
-  display:block;
-  margin: auto;
-}
-.modalButton {
-  background-color: #4CAF50;
-  color: white;
-    padding: 5px 5px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 48%;
+  ul.menu > a > li {
+    padding: 0;
+    text-align: center;
+  }
+
+  form#add-trip > input {
+    position: inline-block;
+  }
+} 
+
+@media screen and (min-width: 791px) {
+  
+  ul.menu {
+    display: initial !important;
+    width: 80%;
+    margin-right: 10%;
+  }
+  
+  .header {
+    float: left; 
+    width: 240px;
+  }
+  
+  nav.main-nav {
+    height: 240px;
+  }
+  
+  #hamb-menu{
+    display: none;
+  }
+  
+  .main-nav > ul > a{
+    margin: 6em 3% 0 0;
+    font-size: 1.5em;
+    display: inline-block; 
   }
 }
 
-/* ul > li { */
-  /* display: inline; */
-  /* } */
-  .header {
-    float: left; 
-    max-width:20%;
-  min-width: 80px;
-}
 
-nav ul li {
-  padding:1em;
-}

@@ -35,7 +35,7 @@ var app = app || {};
     $.post(`${ENV.apiUrl}/addtrip`, trip)
       .then(app.Trip.fetchAll(tripView.initIndexPage))
       .catch(console.error);
-    tripView.addTripPage();
+    // tripView.addTripPage();
   };
 
   // tripView.addTripPage = function () {

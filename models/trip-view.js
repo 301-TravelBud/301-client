@@ -4,32 +4,21 @@ var app = app || {};
 
 
 (function (module){
-  // $('#navTrips').on('click', function (event){
-  //   event.preventDefault();
-  //   tripView.initIndexPage();
-  // });
-
   let tripView = {};
 
-  function show(section) {
-    // $('section').not(`#${section}`).hide();
-    $(`#${section}`).show();
-  }
+  // function show(section) {
+  //   // $('section').not(`#${section}`).hide();
+  //   $(`#${section}`).show();
+  // }
 
   tripView.initIndexPage = function(ctx) {
-    $('td').text('');
+    $('table').empty();
     $('#triplist').hide();
     $('#trip-view').show();
-    // $('#map').hide();
     app.Trip.all.forEach(trip => {
-
-
       $('#trip-list').append(trip.toHtml('#trip-table-template'));
     });
-
   };
-
-
 
   tripView.addNewTrip = function(event) {
     event.preventDefault();
@@ -42,10 +31,7 @@ var app = app || {};
     $.post(`${ENV.apiUrl}/addtrip`, trip)
       .then(app.Trip.fetchAll(tripView.initIndexPage))
       .catch(console.error);
-
   };
-
-
 
 
   module.tripView = tripView;

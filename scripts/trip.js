@@ -98,6 +98,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
   Trip.initTripView = function(ctx, next) {
     console.log('initTripView');
+    app.tripView.initIndexPage();
     $('.page').hide();
     $('#trip-view').show();
   };

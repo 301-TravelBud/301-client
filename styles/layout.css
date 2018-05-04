@@ -1,3 +1,4 @@
+
 .wrong {
   color: red;
 }
@@ -31,97 +32,49 @@ footer {
   margin-top: 3em;
   height: 500px;
   width: 90%;
-}
 
-/* Modal Content */
-#modal {
-  display: none;
-  position: fixed;
-  padding-top: 15%;
-  z-index: 2;
-  left: 0;
-  top: 0;
+* {
+  box-sizing: border-box;
+
+}
+header{
+  font-family: "krona-one", sans-serif;
   width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
 }
-
-#modalImg {
-  width: 20%;
-  border-radius: 50%;
-  margin: auto;
+#logo {
+  display: inline-block;
+  margin: 2em 2em 0em;
+  max-width: 200px;
 }
-
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 100px;
-  border: .5em solid #888;
-  width: 80%;
-}
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-.close:hover, .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-.Mymodal > div > h1 {
-  font-size: 25px;
-  font-weight: bold;
-  display:block;
-  margin: auto;
-}
-.modalButton {
-  background-color: #4CAF50;
-  color: white;
-    padding: 10px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 48%;
-  }
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-#modalContainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative; 
-}
-
-
-  ul.menu > a{
+header p {
   display: block;
+  margin-left: 3em;
+  padding: .3em;
+  width: fit-content;
 }
-
-
 #hamb-menu {
-  width: 50px;
-  height: auto;
-  float: right;
-  margin: -50px 20px 0 0;
+  display: none;
+}
+nav {
+  display: block;
+  text-align: right;
+  width: 100%;
+}
+nav ul {
+  margin-right: 3em;
+}
+nav ul a {
+  display: inline-block;
+  line-height: 2em;
+  padding: 1em 2em 1em 2em;
 }
 
-form#add-trip {
+footer {
+  background-color: gray;
+  color: white;
   text-align: center;
 }
+
 
 @media screen and (max-width: 790px) {
   .header {
@@ -135,6 +88,9 @@ form#add-trip {
 
   #hamb-menu{
     display: initial;
+    float: right;
+    margin: 2em 2em;
+    width: 10%;
   }
   
   ul.menu > a {
@@ -145,13 +101,13 @@ form#add-trip {
     width: 104.7%;
   }
   
-ul.menu {
-  display: none;
-  position: absolute;
-  top: 133px;
-  width: 100%;
-  z-index: 1;
-}
+  ul.menu {
+    display: none;
+    position: absolute;
+    top: 133px;
+    width: 100%;
+    z-index: 1;
+  }
 
   ul.menu > a > li {
     padding: 0;
@@ -195,3 +151,5 @@ ul.menu {
 #buttons {
   padding-top: 50px;
 }
+} 
+

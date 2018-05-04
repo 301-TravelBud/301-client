@@ -10,6 +10,7 @@ var app = app || {};
     $('table').empty();
     $('#triplist').hide();
     // $('#trip-view').show();
+
     app.Trip.all.forEach(trip => {
       $('#trip-list').append(trip.toHtml('#trip-table-template'));
     });

@@ -41,7 +41,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
         if(parseInt(exists) === 1) {
           // console.log('pls pick a different name');
         } else {
-          console.log('new user', obj);
           Trip.currentUser = obj;
           // console.log(Trip.currentUser, 'its me current user');
           $.post(`${ENV.apiUrl}/createuser`, {
@@ -62,15 +61,18 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       });};
 
   Trip.userCheck = (callback) => {
+    console.log(callback, 'usercheck');
     const check = {
       username: $('#username').val(),
       password: $('#password').val(),
       email: $('#userEmail').val()
     };
+    console.log('input field', check);
     Trip.adminCheck(check, callback);
   };
 
   Trip.adminCheck = (obj, callback) => {
+    console.log(callback, 'in admin check');
     $.get(`${ENV.apiUrl}/admin`)
       .then(results => {
         console.log(results);
@@ -80,6 +82,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
             loggedin = true;
             $('#logged').text('Welcome ' + results[i].user_name);
             console.log('current user here ->', Trip.currentUser);
+            callback();
           } else {
             $('#wrong').show();
           }

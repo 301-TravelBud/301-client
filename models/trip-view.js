@@ -6,9 +6,8 @@ var app = app || {};
 (function (module){
   let tripView = {};
 
-  tripView.initIndexPage = function(ctx) {
-    $('#triplist').empty();
-
+  tripView.initIndexPage = () => {
+    $('#trip-list').empty();
     $('#trip-view').show();
     app.Trip.all.forEach(trip => {
       $('#trip-list').append(trip.toHtml('#trip-table-template'));

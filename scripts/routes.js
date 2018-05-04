@@ -1,13 +1,13 @@
 
 
-page('/', (ctx, next) => app.Trip.fetchAll(app.Trip.initIndexPage()));
+page('/', () => app.Trip.fetchAll(app.Trip.initIndexPage()));
 
 page('/admin', () => app.Trip.userCheck(app.Trip.hideModal));
 
 
-page('/aboutus', (ctx, next) => app.Trip.initAboutUsView());
+page('/aboutus', () => app.Trip.initAboutUsView());
 
-page('/addtrip', () => app.Trip.fetchAll(app.tripView.initTripView));
+page('/addtrip', () => app.Trip.initTripView());
 
 page();
 page('/createuser', () => app.Trip.createAccount(app.Trip.hideModal));

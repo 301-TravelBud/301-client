@@ -1,5 +1,5 @@
 'use strict';
-
+/* global google */
 var app = app || {};
 
 (function(module){

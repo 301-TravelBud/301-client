@@ -75,7 +75,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .then(results => {
         console.log(results);
         for (let i in results) {
-          if (results[i].user_name == obj.username && results[i].password == obj.password) {
+          if (results[i].user_name === obj.username && results[i].password === obj.password) {
             Trip.currentUser = results[i];
 
             console.log('current user here ->', Trip.currentUser);
@@ -95,21 +95,22 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
 
-  Trip.initIndexPage = function(ctx, next) {
+  Trip.initIndexPage = () => {
     console.log('initindexpage');
+    app.Marker.mapMarkers();
     $('.page').hide();
     $('#test').show();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
   };
-  Trip.initTripView = function(ctx, next) {
+  Trip.initTripView = () => {
     console.log('initTripView');
     app.tripView.initIndexPage();
     $('.page').hide();
     $('#trip-view').show();
   };
 
-  Trip.initAboutUsView = function(ctx, next) {
+  Trip.initAboutUsView = () => {
     console.log('aboutusview');
     $('.page').hide();
     $('#aboutus').show();

@@ -18,11 +18,17 @@ The application is designed using HTML, CSS, JavaScript, jQuery, Handlebars, Pag
 4/30/18 2pm - html scaffolding, layout.css and base.css styling - AG
 4/30/18 3pm - display google map - AB
 
+5/1/18 created login functionality and visuals - CH
+5/1/18 trips table displaying - AG
+
+5/2/18 - additional login features - CH
+5/2/18 - added markers to the map - AB
+
+5/3/18 - current User recognized, create user fills database - CH
+
 
 ## Credits and Collaborations
 Task management - Trello - https://trello.com/b/O2xf8GNa/301-project 
 
 CSSReset provided by https://meyerweb.com/eric/tools/css/reset/
 
-- Wireframes
-- UX Workflow

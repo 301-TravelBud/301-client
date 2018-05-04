@@ -1,6 +1,6 @@
 
 #map {
-  border: .5px solid black; 
+  border: 1px solid black; 
   margin: auto;
   margin-top: 3em;
   height: 500px;
@@ -12,6 +12,7 @@
   display: hidden;
 }
 
+/* Modal Content */
 #modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -26,7 +27,6 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -115,4 +115,19 @@ h2 {
 
 .map-descript > span {
   font-weight: bold;
+}
+
+#aboutus {
+  font-family: Krona one;
+  line-height: 1.5em;
+}
+
+#aboutus h2{
+  background-color: gray;
+  color: white;
+}
+
+#aboutus p {
+  background-color: gray;
+  color: white;
 }

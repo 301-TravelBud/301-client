@@ -1,85 +1,123 @@
 header {
-  float: left; 
-  max-width:20%;
-  min-width: 80px;
-}
-
-header {
-  display: inline-block;
-  padding: 1em;
-  text-align: right;
+  height: 100%;
   width: 100%;
 }
-
-header p {
-  float: left;
-  font-size: smaller;
-  clear: left;
-  padding: .25em;
+header img {
+  display:inline-block;
+  margin: 2em 2em .5em;
+  min-width: 150px;
+  width: 20%;
 }
-
+header p {
+  display: inline-block;
+  font-size: smaller;
+  padding-left: 5em;
+  width: 100%;
+}
+#hamb-menu {
+  display: none;
+}
+nav {
+  display: inline-block;
+  height: 100%;
+  margin-top: 2em;
+  margin-bottom: 0;
+  text-align: center;
+  width: 100%;
+}
 nav ul{
   list-style-type: none;
-  padding: 1em;
+  overflow: hidden;
 }
+nav li {
+  background-color: lightskyblue;
+  border-radius: 10px 10px 0 0;
+  display: inline-block;
+  padding: 1em 2em 1em;
+}
+
 main {
-  padding: 2em;
+  padding: 2em; 
 }
+
 footer {
+  color: white;
+  padding: 1em;
+  text-align: center;
+  height: 100%
+}
+
+#hamb-menu {
+  width: 50px;
+  height: auto;
+  float: right;
+  margin: -50px 20px 0 0;
+}
+
+form#add-trip {
+  text-align: center;
+}
+
+#aboutus {
+  text-align: center;
+}
+.about {
+  display: inline-block;
+  overflow: hidden;
+  margin: 2em;
+  max-width: 35%;
+}
+.about h2 {
+  border-radius: 50px 50px 0px 0px;
+  margin-bottom: -.2em;
   padding: 1em;
 }
+.about img {
+  max-width: 100%;
+}
+.about p {
+  border-radius: 0px 0px 50px 50px;
+  margin-top: -.4em;
+  padding: 1em;
+}
+
 
 @media screen and (max-width: 790px) {
 
-nav {
-  display:inline-block;
-  padding: .5em;
-  text-align: center; 
-}
-
-nav>ul:hover {
-display: inline;
-}
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: .5em solid #888;
-  width: 90%;
-}
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.Mymodal > div > h1 {
-  font-size: 13px;
-  font-weight: bold;
-  display:block;
-  margin: auto;
-}
-.modalButton {
-  background-color: #4CAF50;
-  color: white;
-    padding: 5px 5px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 48%;
+  nav.main-nav {
+    height: 150px;
   }
+
+  #hamb-menu{
+    display: inline-block;
+  }
+  
+  ul.menu > a {
+    background-color: #f4e8c1;
+    border: 1px black solid;
+    margin-left: -16px;
+    padding: 1em;
+    width: 104.7%;
+  }
+  
+ul.menu {
+  display: none;
+  position: absolute;
+  top: 133px;
+  width: 100%;
+  z-index: 1;
 }
 
-/* ul > li { */
-  /* display: inline; */
-  /* } */
-  .header {
-    float: left; 
-    max-width:20%;
-  min-width: 80px;
-}
+  ul.menu > a > li {
+    padding: 0;
+    text-align: center;
+  }
 
-nav ul li {
-  padding:1em;
+  form#add-trip > input {
+    position: inline-block;
+  }
+} 
+
+#buttons {
+  padding-top: 50px;
 }

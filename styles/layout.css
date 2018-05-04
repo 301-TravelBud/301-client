@@ -69,6 +69,30 @@ nav ul a {
   padding: 1em 2em 1em 2em;
 }
 
+#aboutus {
+  height: 100%;
+  text-align: center;
+}
+div.about {
+  display: inline-table;
+  line-height: 1.5em;
+  margin: 2em 1em;
+  overflow: hidden;
+}
+#aboutus h2 {
+  padding: 2em 1em 2em;
+}
+
+.dev-pic {
+  height: auto;
+  width: 250px;
+}
+
+div.about > p {
+  padding: 2em 1em 2em 1em;
+  max-width: 500px;
+}
+
 footer {
   background-color: gray;
   color: white;

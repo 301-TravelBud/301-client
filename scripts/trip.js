@@ -80,7 +80,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
           if (results[i].user_name == obj.username && results[i].password == obj.password) {
             Trip.currentUser = results[i];
             loggedin = true;
-            $('#logged').text('Welcome ' + results[i].user_name);
+            $('#logged').text('Welcome ' + Trip.currentUser.user_name);
             console.log('current user here ->', Trip.currentUser);
             callback();
           } else {
@@ -137,7 +137,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Trip.hideModal = () => {
     $('#modal').css('display', 'none');
   };
-
+  Trip.initIndexPage();
 
   module.Trip = Trip;
 })(app);

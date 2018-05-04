@@ -9,7 +9,7 @@ page('/addtrip', () => app.Trip.fetchAll(app.Trip.initTripView()));
 
 page('/aboutus', () => app.Trip.initAboutUsView());
 
-page('/addtrip', () => app.Trip.fetchAll(app.tripView.initTripView));
+// page('/addtrip', () => app.Trip.fetchAll(app.tripView.initTripView));
 
 page();
 page('/createuser', () => app.Trip.createAccount(app.Trip.hideModal));

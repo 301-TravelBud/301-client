@@ -52,6 +52,6 @@ var app = app || {};
     }
 
   }
-  Marker.mapMarkers();
+  // Marker.mapMarkers();
   module.Marker = Marker;
 })(app);

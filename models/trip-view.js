@@ -7,9 +7,10 @@ var app = app || {};
   let tripView = {};
 
   tripView.initIndexPage = function() {
-    $('table').empty();
-    $('#triplist').hide();
-    // $('#trip-view').show();
+    // $('table').empty();
+    $('.table-container').empty();
+
+    app.Marker.mapMarkers();
 
     app.Trip.all.forEach(trip => {
       $('#trip-list').append(trip.toHtml('#trip-table-template'));

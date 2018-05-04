@@ -32,7 +32,7 @@ footer {
 #modal {
   display: none;
   position: fixed;
-  padding-top: 30%;
+  padding-top: 15%;
   z-index: 2;
   left: 0;
   top: 0;
@@ -180,6 +180,7 @@ ul.menu {
   #hamb-menu{
     display: none;
   }
+
   
   .main-nav > ul > a{
     margin: 6em 3% 0 0;

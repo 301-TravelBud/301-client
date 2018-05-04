@@ -4,26 +4,16 @@ var app = app || {};
 
 
 (function (module){
-  $('#navTrips').on('click', function (event){
-    event.preventDefault();
-    tripView.initIndexPage();
-  });
-
   let tripView = {};
-
-
 
   tripView.initIndexPage = function(ctx) {
     $('#triplist').empty();
+
     $('#trip-view').show();
     app.Trip.all.forEach(trip => {
-
-
       $('#trip-list').append(trip.toHtml('#trip-table-template'));
     });
   };
-
-
 
   tripView.addNewTrip = function(event) {
     event.preventDefault();
@@ -38,10 +28,6 @@ var app = app || {};
       .then(app.Trip.fetchAll(tripView.initIndexPage))
       .catch(console.error);
   };
-
-  // tripView.addTripPage = function () {
-  //   $('#map').hide();
-  // };
 
 
   module.tripView = tripView;

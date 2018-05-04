@@ -15,6 +15,7 @@ header p {
 
 main {
   padding: 2em;
+  
 }
 footer {
   padding: 1em;
@@ -26,6 +27,7 @@ footer {
   height: 500px;
   width: 90%;
 }
+
 /* Modal Content */
 #modal {
   display: none;
@@ -40,11 +42,13 @@ footer {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
+
 #modalImg {
   width: 20%;
   border-radius: 50%;
   margin: auto;
 }
+
 .modal-content {
   background-color: #fefefe;
   margin: auto;
@@ -90,31 +94,40 @@ footer {
   from {transform: scale(0)} 
   to {transform: scale(1)}
 }
+
 #modalContainer {
   text-align: center;
   margin: 24px 0 12px 0;
   position: relative; 
 }
+
+
   ul.menu > a{
   display: block;
 }
+
+
 #hamb-menu {
   width: 50px;
   height: auto;
   float: right;
   margin: -50px 20px 0 0;
 }
+
 form#add-trip {
   text-align: center;
 }
+
 @media screen and (max-width: 790px) {
   .header {
     float: left; 
     width: 110px;
   }
+
   nav.main-nav {
     height: 150px;
   }
+
   #hamb-menu{
     display: initial;
   }
@@ -134,14 +147,17 @@ ul.menu {
   width: 100%;
   z-index: 1;
 }
+
   ul.menu > a > li {
     padding: 0;
     text-align: center;
   }
+
   form#add-trip > input {
     position: inline-block;
   }
 } 
+
 @media screen and (min-width: 791px) {
   
   ul.menu {
@@ -169,6 +185,7 @@ ul.menu {
     display: inline-block; 
   }
 }
+
 #buttons {
   padding-top: 50px;
 }

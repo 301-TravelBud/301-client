@@ -7,18 +7,22 @@ table {
 th {
   font-weight: bold;
 }
+
 td{
   border: 1px black solid;
   text-align: center;
   padding: 3px;
 }
+
 h2 {
   font-size: 25px;
   font-weight: bold;
 }
+
 .map-descript {
   font-size: 15px;
 }
+
 .map-descript > span {
   font-weight: bold;
 }

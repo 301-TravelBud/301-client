@@ -1,5 +1,10 @@
-#wrong {
+.wrong {
   color: red;
+}
+#wrong {
+  display: none;
+}
+#taken {
   display: none;
 }
 nav ul{

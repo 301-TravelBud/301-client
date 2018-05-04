@@ -11,7 +11,7 @@ var app = app || {};
   //   $(`#${section}`).show();
   // }
 
-  tripView.initIndexPage = function(ctx) {
+  tripView.initIndexPage = function() {
     $('table').empty();
     $('#triplist').hide();
     $('#trip-view').show();

@@ -1,5 +1,41 @@
+
+.wrong {
+  color: red;
+}
+#wrong {
+  display: none;
+}
+#taken {
+  display: none;
+}
+nav ul{
+  list-style-type: none;
+  padding: 1em;
+}
+header p {
+  float: left;
+  font-size: smaller;
+  clear: left;
+  padding: .25em;
+}
+
+main {
+  padding: 2em;
+  
+}
+footer {
+  padding: 1em;
+}
+ #map {
+  border: .5px solid black; 
+  margin: auto;
+  margin-top: 3em;
+  height: 500px;
+  width: 90%;
+
 * {
   box-sizing: border-box;
+
 }
 header{
   font-family: "krona-one", sans-serif;
@@ -82,3 +118,38 @@ footer {
     position: inline-block;
   }
 } 
+
+@media screen and (min-width: 791px) {
+  
+  ul.menu {
+    display: initial !important;
+    width: 80%;
+    margin-right: 10%;
+  }
+  
+  .header {
+    float: left; 
+    width: 240px;
+  }
+  
+  nav.main-nav {
+    height: 240px;
+  }
+  
+  #hamb-menu{
+    display: none;
+  }
+
+  
+  .main-nav > ul > a{
+    margin: 6em 3% 0 0;
+    font-size: 1.5em;
+    display: inline-block; 
+  }
+}
+
+#buttons {
+  padding-top: 50px;
+}
+} 
+

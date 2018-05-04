@@ -33,7 +33,7 @@ var app = app || {};
       geocoder.geocode({'address': `${Marker.all[i].city} ${Marker.all[i].country}`}, function(results, status) {
 
         if (status === 'OK') {
-          const travelDetail= `<h2>${Marker.all[i].city} ${Marker.all[i].country}</h2><p class="map-descript">Would you like to travel with <span>${Marker.all[i].user_name} </span>from <span>${Marker.all[i].start_date} to ${Marker.all[i].end_date}</span></p><p class="map-descript">If so, contact ${Marker.all[i].user_name} at ${Marker.all[i].email} RIGHT NOW!</p>` ;
+          const travelDetail= `<h2>${Marker.all[i].city} ${Marker.all[i].country}</h2><p class="map-descript">Would you like to travel with <span>${Marker.all[i].user_name} </span>from <span>${Marker.all[i].start_date} to ${Marker.all[i].end_date}</span></p>` ;
 
 
           const infowindow = new google.maps.InfoWindow({
@@ -52,6 +52,6 @@ var app = app || {};
     }
 
   }
-  // Marker.mapMarkers();
+  Marker.mapMarkers();
   module.Marker = Marker;
 })(app);

@@ -10,8 +10,6 @@ var app = app || {};
     // $('table').empty();
     $('.table-container').empty();
 
-    app.Marker.mapMarkers();
-
     app.Trip.all.forEach(trip => {
       $('#trip-list').append(trip.toHtml('#trip-table-template'));
     });

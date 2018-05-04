@@ -5,7 +5,7 @@ var app = app || {};
 const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https:';
-ENV.productionApiUrl = 'https://abad-app.herokuapp.com/';
+ENV.productionApiUrl = 'https://abad-app.herokuapp.com';
 ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
@@ -36,29 +36,29 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
   Trip.newUser = (obj, callback) => {
-    $.get(`${ENV.apiUrl}/login`)
+    $.get(`${ENV.apiUrl}/login`, {
+      user_name: Trip.addUser.username
+    })
       .then(exists => {
-        if(parseInt(exists) === 1) {
-          // console.log('pls pick a different name');
+        console.log('exists', exists.count);
+        if(parseInt(exists.count) === 1) {
+          console.log('username taken');
+          $('#taken').show();
         } else {
           Trip.currentUser = obj;
-          // console.log(Trip.currentUser, 'its me current user');
           $.post(`${ENV.apiUrl}/createuser`, {
             user_name: Trip.currentUser.username,
             password: Trip.currentUser.password,
             email: Trip.currentUser.email})
-          // console.log('new user created');
             .then(results => {
-              console.log(results[0]);
-              Trip.currentUser = results[0];
+              Trip.currentUser = results;
+              loggedin = true;
+              $('#logged').text('Welcome ' + Trip.currentUser.user_name);
             });
           callback();
         }
       }
-      )
-      .then(results => {
-        console.log('hit the then', results);
-      });};
+      );};
 
   Trip.userCheck = (callback) => {
     console.log(callback, 'usercheck');
@@ -87,23 +87,12 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
             $('#wrong').show();
           }
         }
-      }
-      )
-      .then(callback);
-    // .catch(errorCallback);
+      });
   };
-
   console.log('current user', Trip.currentU);
 
-  // Trip.usernameDisplay = () => {
-  //   if(Trip.currentUser !== ''){
-  //     $('#logged').text(Trip.currentUser);
-  //   }
-  // }
-
-
   Trip.adminView = (callback) => {
-    console.log('hit admin view');
+    console.log('hit admin view', callback);
     callback();
   };
 

@@ -25,7 +25,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
   Trip.currentUser = {};
   Trip.addUser = {};
-
+  let loggedin = false;
   Trip.createAccount = (callback) => {
     Trip.addUser = {
       username: $('#username').val(),
@@ -39,13 +39,15 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     $.get(`${ENV.apiUrl}/login`)
       .then(exists => {
         if(parseInt(exists) === 1) {
-          console.log('pls pick a different name');
+          // console.log('pls pick a different name');
         } else {
           Trip.currentUser = obj;
+          // console.log(Trip.currentUser, 'its me current user');
           $.post(`${ENV.apiUrl}/createuser`, {
             user_name: Trip.currentUser.username,
             password: Trip.currentUser.password,
             email: Trip.currentUser.email})
+          // console.log('new user created');
             .then(results => {
               console.log(results[0]);
               Trip.currentUser = results[0];
@@ -77,16 +79,27 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
         for (let i in results) {
           if (results[i].user_name == obj.username && results[i].password == obj.password) {
             Trip.currentUser = results[i];
-
+            loggedin = true;
+            $('#logged').text('Welcome ' + results[i].user_name);
             console.log('current user here ->', Trip.currentUser);
             callback();
           } else {
             $('#wrong').show();
           }
         }
-      });
+      }
+      )
+      .then(callback);
     // .catch(errorCallback);
   };
+
+  console.log('current user', Trip.currentU);
+
+  // Trip.usernameDisplay = () => {
+  //   if(Trip.currentUser !== ''){
+  //     $('#logged').text(Trip.currentUser);
+  //   }
+  // }
 
 
   Trip.adminView = (callback) => {
@@ -95,21 +108,26 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   };
 
 
-  Trip.initIndexPage = function(ctx, next) {
+  Trip.initIndexPage = () => {
     console.log('initindexpage');
     $('.page').hide();
     $('#test').show();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
   };
-  Trip.initTripView = function(ctx, next) {
-    console.log('initTripView');
-    app.tripView.initIndexPage();
-    $('.page').hide();
-    $('#trip-view').show();
-  };
+  Trip.initTripView = () => {
+    console.log('current user', Trip.currentUser);
+    if(loggedin === false){
+      alert('You have not logged in yet');
+      page('/');
+    } else {
+      console.log('initTripView');
+      app.tripView.initIndexPage();
+      $('.page').hide();
+      $('#trip-view').show();
+    }};
 
-  Trip.initAboutUsView = function(ctx, next) {
+  Trip.initAboutUsView = () => {
     console.log('aboutusview');
     $('.page').hide();
     $('#aboutus').show();

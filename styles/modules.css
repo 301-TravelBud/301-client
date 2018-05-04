@@ -26,3 +26,32 @@ h2 {
 .map-descript > span {
   font-weight: bold;
 }
+
+#logged {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+#aboutus {
+  background-color: gray;
+  text-align: center;
+}
+
+div.about {
+  display: inline-block;
+  margin: 2em 1em;
+  overflow: hidden;
+}
+
+.dev-pic {
+  width: 250px;
+  height: auto;
+}
+
+div.about > p {
+  width: 500px;
+  font-size: 20px;
+}

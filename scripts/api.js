@@ -6,6 +6,8 @@ var app = app || {};
 
   function Marker(data){
     Object.keys(data).forEach( key => this[key] = data[key]);
+    this.start_date = this.start_date.slice(0, 10);
+    this.end_date = this.end_date.slice(0, 10);
   }
   Marker.all = [];
 
@@ -31,7 +33,7 @@ var app = app || {};
       geocoder.geocode({'address': `${Marker.all[i].city} ${Marker.all[i].country}`}, function(results, status) {
 
         if (status === 'OK') {
-          const travelDetail= `<h2>${Marker.all[i].city}</h2> <p>Location: ${Marker.all[i].city}, ${Marker.all[i].country}</p><p>Would you like to travel with ${Marker.all[i].user_name}?</p><p>from ${Marker.all[i].start_date} to ${Marker.all[i].end_date}</p><p>If so, contact ${Marker.all[i].user_name} at ${Marker.all[i].email} RIGHT NOW!</p>` ;
+          const travelDetail= `<h2>${Marker.all[i].city} ${Marker.all[i].country}</h2><p class="map-descript">Would you like to travel with <span>${Marker.all[i].user_name} </span>from <span>${Marker.all[i].start_date} to ${Marker.all[i].end_date}</span></p><p class="map-descript">If so, contact ${Marker.all[i].user_name} at ${Marker.all[i].email} RIGHT NOW!</p>` ;
 
 
           const infowindow = new google.maps.InfoWindow({

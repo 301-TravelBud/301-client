@@ -77,6 +77,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
         for (let i in results) {
           if (results[i].user_name == obj.username && results[i].password == obj.password) {
             Trip.currentUser = results[i];
+
             console.log('current user here ->', Trip.currentUser);
             callback();
           } else {
@@ -95,9 +96,24 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
   Trip.initIndexPage = function(ctx, next) {
-    $('#tripView').hide();
+    console.log('initindexpage');
+    $('.page').hide();
+    $('#test').show();
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
+  };
+  Trip.initTripView = function(ctx, next) {
+    console.log('initTripView');
+    app.tripView.initIndexPage();
+    $('.page').hide();
+    $('#trip-view').show();
+  };
+
+  Trip.initAboutUsView = function(ctx, next) {
+    console.log('aboutusview');
+    $('.page').hide();
+    $('#aboutus').show();
+
   };
 
   Trip.fetchAll = callback => {

@@ -29,6 +29,7 @@ h2 {
   margin-top: 3em;
   height: 500px;
   width: 90%;
+
 }
 
 .map-descript > span {
@@ -49,7 +50,9 @@ h2 {
 .wrong {
   color: red;
 }
-
+#test {
+  padding-bottom: 4em;
+}
 
 
 

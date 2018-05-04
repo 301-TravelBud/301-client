@@ -7,10 +7,12 @@ header{
 }
 #logo {
   display: inline-block;
+  margin: 2em 2em 0em;
   max-width: 200px;
 }
 header p {
   display: block;
+  margin-left: 3em;
   padding: .3em;
   width: fit-content;
 }
@@ -30,6 +32,14 @@ nav ul a {
   line-height: 2em;
   padding: 1em 2em 1em 2em;
 }
+
+footer {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+
 @media screen and (max-width: 790px) {
   .header {
     float: left; 
@@ -55,13 +65,13 @@ nav ul a {
     width: 104.7%;
   }
   
-ul.menu {
-  display: none;
-  position: absolute;
-  top: 133px;
-  width: 100%;
-  z-index: 1;
-}
+  ul.menu {
+    display: none;
+    position: absolute;
+    top: 133px;
+    width: 100%;
+    z-index: 1;
+  }
 
   ul.menu > a > li {
     padding: 0;

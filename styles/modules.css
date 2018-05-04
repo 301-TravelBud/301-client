@@ -1,7 +1,4 @@
-
-
-
-table {
+```table {
   background-color: beige;
   width: 85%;
   margin: 0 10%;
@@ -45,10 +42,15 @@ h2 {
   font-weight: bold;
 }
 
-#wrong {
-  color: red;
+#wrong, #taken {
   display: none;
 }
+
+.wrong {
+  color: red;
+}
+
+
 
 
 
@@ -110,6 +112,18 @@ h2 {
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
+
+ul.menu > a > li {
+  padding: 0;
+  text-align: center;
+}
+
+form#add-trip > input {
+  position: inline-block;
+}
+
+
+
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)} 
   to {-webkit-transform: scale(1)}
@@ -125,3 +139,7 @@ h2 {
   position: relative; 
 }
 
+#buttons {
+  overflow: hidden;
+  line-height: 4em;
+}

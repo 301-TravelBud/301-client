@@ -6,14 +6,9 @@ var app = app || {};
 (function (module){
   let tripView = {};
 
-  // function show(section) {
-  //   // $('section').not(`#${section}`).hide();
-  //   $(`#${section}`).show();
-  // }
+  tripView.initIndexPage = function(ctx) {
+    $('#triplist').empty();
 
-  tripView.initIndexPage = function() {
-    $('table').empty();
-    $('#triplist').hide();
     $('#trip-view').show();
     app.Trip.all.forEach(trip => {
       $('#trip-list').append(trip.toHtml('#trip-table-template'));
@@ -23,6 +18,7 @@ var app = app || {};
   tripView.addNewTrip = function(event) {
     event.preventDefault();
     let trip = {
+      user_id: app.Trip.currentUser.user_id,
       country: event.target.country.value,
       city: event.target.city.value,
       start_date: event.target.start_date.value,

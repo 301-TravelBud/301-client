@@ -16,10 +16,12 @@
 
     <script type="text/x-handlebars-template" id="trip-table-template">
       <tr class="table-container">
+        <td>{{user_name}}</td>
         <td>{{country}}</td>
         <td>{{city}}</td>
         <td>{{start_date}}</td>
         <td>{{end_date}}</td>
+        <td>{{email}}</td>
       </tr>
     </script>
 
@@ -75,10 +77,12 @@
 </section>
 <section id="trip-view" class="page">
   <table id="trip-list">
+    <th>Username</th>
     <th>Country</th>
     <th>City</th>
     <th>Start Date</th>
     <th>End Date</th>
+    <th>Contact Information</th>
   </table>
     <form id="add-trip">
       <input type="text" name="country" id= "country" placeholder="country" required>

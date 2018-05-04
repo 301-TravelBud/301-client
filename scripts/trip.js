@@ -93,6 +93,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     console.log('initindexpage');
     $('.page').hide();
     $('#test').show();
+
     Trip.all.forEach(trip =>
       $('#trip-list').append(trip.toHtml('#trip-table-template')));
   };
